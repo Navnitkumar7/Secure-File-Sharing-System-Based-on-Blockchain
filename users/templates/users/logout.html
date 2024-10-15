@@ -1,0 +1,13 @@
+{% extends "blog/base.html" %}
+{% block content %}
+<div class="logout-card">
+    <p class="card-title">Logout</p>
+    <div class="border-top pt-3">
+   <h2 class="logout-message">You have been successfully logged out !!!</h2>
+   <a href="{% url 'login' %} " class="btn text-white m-2 login-done"><i class="fas fa-user-tie"></i> Log In Again</a>
+        {% comment %} <small class="text-muted">
+            <a href="{% url 'login' %}">Log In Again</a>
+        </small> {% endcomment %}
+    </div>
+</div>
+{% endblock content %}
