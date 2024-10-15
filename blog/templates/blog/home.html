@@ -1,0 +1,33 @@
+{% extends "blog/base.html" %}
+{% block content %}
+{% load static%}
+
+<head>
+  <link rel="stylesheet" href="{% static 'blog/home.css' %}">
+</head>
+
+<body>
+  <div class="container" >
+    <h1>Securely store, manage, and share your data online</h1>
+    <p>Secure your data with blockchain - store, access, and share your files without sacrificing privacy or security.</p>
+    <div style="text-align:center">
+      <div class="list-container">
+        <ul class="unorder-list"><i class="fas fa-light fa-infinity" style="color: #e99116;margin-right: 4%;"></i>No File Size Limit</ul>
+        <ul class="unorder-list"><i class="fas fa-light fa-users" style="color: #e99116;margin-right: 4%;"></i>Peer-to-Peer</ul>
+      </div>
+      <div class="list-container">
+        <ul class="unorder-list"><i class="fas fa-light fa-bolt" style="color: #e99116;margin-right: 7%;"></i> Blazingly fast</ul>
+        <ul class="unorder-list"><i class="fas fa-light fa-key" style="color: #e99116;margin-right: 4%;"></i>End-to-end encrypted</ul>
+      </div>
+    </div>
+  </div>
+  {% if user.is_authenticated %}
+  <a href="{% url 'post-create' %} " class="btn text-white m-2 upload-files-button"><i class="fas fa-upload"></i> Upload New Files </a>
+  {% else %}
+  <a href="{% url 'login' %} " class="btn text-white m-2 button-login"><i class="fas fa-user-tie"></i> Log In</a>
+  <a href="{% url 'register' %} " class="btn text-white m-2 button-register"> <i class="fas fa-sign-in-alt"></i> Sign Up</a>
+  {% endif %}
+
+</body>
+
+{% endblock content %}
